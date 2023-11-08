@@ -7,4 +7,4 @@ function createHelloWorld (){
 
 
 
-console.log(createHelloWorld(fghj));
+console.log(createHelloWorld({},null,42));
