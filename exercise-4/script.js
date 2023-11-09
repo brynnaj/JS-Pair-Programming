@@ -5,5 +5,5 @@ function createMultiplier (multiplier) {
 
 }
 
-const multiplyByFive = createMultiplier(10)
-console.log(multiplyByFive(5))
+const multiplyByFive = createMultiplier(10);
+console.log(multiplyByFive(5));
