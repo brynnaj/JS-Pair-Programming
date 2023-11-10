@@ -2,15 +2,18 @@
 
 function myDebounce(fn, t) {
   let id;
-  (function myFunc(...args) {
+  return function myFunc(...args) {
     clearTimeout(id);
     id = setTimeout(() => fn(...args), t);
-  })();
+  };
 }
 
-const plusOne = function (num) {
-  return (num += 1);
-};
+const start = Date.now();
+function log(...inputs) {
+  console.log([Date.now() - start, inputs]);
+}
 
-console.log(myDebounce(plusOne(1), 50));
-console.log(myDebounce(plusOne(2), 75));
+const dlog = myDebounce(log, 50);
+
+setTimeout(() => dlog(1), 50);
+setTimeout(() => dlog(2), 75);
